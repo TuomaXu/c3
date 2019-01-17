@@ -100,28 +100,42 @@ int main()
 
             printf("添加完成，点击回车继续\n");
             char xx;
-            scanf("%c",&xx);
-            scanf("%c",&xx);
+            scanf("%c", &xx);
+            scanf("%c", &xx);
         }
         if (code == 2)
         {
-
+            if (index > 0)
+            {
+                //当前存在车辆位置信息，可以删除
+                index--;
+                printf("删除完成，点击回车继续\n");
+                char xx;
+                scanf("%c", &xx);
+                scanf("%c", &xx);
+            }
+            else
+            {
+                //当前车辆信息为空，不能删除
+                printf("无车辆位置信息，删除失败，点击回车继续\n");
+                char xx;
+                scanf("%c", &xx);
+                scanf("%c", &xx);
+            }
         }
         if (code == 3)
         {
             printf("所有车辆位置如下：\n");
-            
-            for(int i = 0; i < index; i++)
+
+            for (int i = 0; i < index; i++)
             {
-                printf("第%d个车辆的位置为(%d,%d)\n",i+1,arr[i].x,arr[i].y);
+                printf("第%d个车辆的位置为(%d,%d)\n", i + 1, arr[i].x, arr[i].y);
             }
 
             printf("\n点击回车继续\n");
             char xx;
-            scanf("%c",&xx);
-            scanf("%c",&xx);
-            
-            
+            scanf("%c", &xx);
+            scanf("%c", &xx);
         }
         if (code == 4)
         {
