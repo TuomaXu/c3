@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 
 //敏感字符管理应用软件---Java C# python js
 //C语言一般做硬件控制开发，比如冰箱自动控制程序
@@ -139,6 +140,39 @@ int main()
         }
         if (code == 4)
         {
+            printf("请输入当前位置坐标：\n");
+            int x;
+            int y;
+            scanf("%d",&x);
+            scanf("%d",&y);
+
+            //用当前的x和y的坐标，与每一个车辆的位置进行计算，然后将最小的值输出
+
+            //两点之间的距离公式
+            double min = 100000;
+            int carID = 0;
+            for(int i=0;i<index;i++){
+                int dx = x - arr[i].x;
+                int dy = y - arr[i].y;
+                double l = sqrt(dx*dx+dy*dy);
+
+                //printf("用户当前位置与第%d个车的距离为%lf\n",i+1,l);
+                if(min > l){
+                    min = l;
+                    carID = i;
+                }
+            }
+
+            printf("用户当前位置与第%d个车的距离为%lf，是最小距离\n",carID+1,min);
+
+
+
+            printf("\n点击回车继续\n");
+            char xx;
+            scanf("%c", &xx);
+            scanf("%c", &xx);
+            //灯塔算法  
+
         }
         if (code == 5)
         {
