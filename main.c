@@ -21,9 +21,56 @@ arr[1] = 'b';
     5---退出
  */
 
+/*
+    int a;//只能储存一个值
+    //技术需求：需要有一种方式，能够让一个变量同时储存两个值
+    //在应用编程中，经常需要将多个值，存储在一个变量中
+
+    //结构体机制：通过使用结构体机制，可以自己创建一个变量类型，然后使用你自己创建的变量类型，就可以定义变量
+    //结构体机制：本质上是，通过基本数据类型，char int double 来进行组合成一个新的数据类型
+    
+    
+    struct Point
+    {
+        int x;
+        int y;
+    };
+    
+    //struct Point 这个是你通过结构体机制创建的数据类型的名字
+
+    int a;
+    a = 1;
+
+    int arr[100];
+
+    arr[0] = 1;
+    arr[1] = 2;
+
+
+    struct Point b;//struct Point是数据类型，等效int   b是通过这个数据类型声明（定义）的变量
+
+    b.x = 1;
+    b.y = 2;
+
+    struct Point brr[100];
+
+    brr[0].x = 1;
+    brr[0].y = 2;
+
+    brr[1].x = 2;
+    brr[1].y = 4;
+*/
+
+struct Point
+{
+    int x;
+    int y;
+};
+
 int main()
 {
-
+    int index = 0;
+    struct Point arr[100];
     printf("欢迎进入专场位置管理系统!\n");
 
     while (1)
@@ -40,7 +87,21 @@ int main()
 
         if (code == 1)
         {
+            printf("请输入车辆位置的x坐标和y坐标：\n");
+            int x;
+            int y;
+            scanf("%d", &x);
+            scanf("%d", &y);
 
+            arr[index].x = x;
+            arr[index].y = y;
+
+            index++;
+
+            printf("添加完成，点击回车继续\n");
+            char xx;
+            scanf("%c",&xx);
+            scanf("%c",&xx);
         }
         if (code == 2)
         {
